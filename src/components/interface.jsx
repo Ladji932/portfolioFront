@@ -271,7 +271,6 @@ const ContactSection = () => {
     const formData = new FormData(event.target);
     const formObject = Object.fromEntries(formData.entries());
     
-    // Validation côté client
     const errors = [];
     if (!formObject.name || formObject.name.trim() === '') {
       errors.push('Le champ "Nom" est requis.');
@@ -294,7 +293,7 @@ const ContactSection = () => {
     try {
       setState({ ...state, submitting: true, errors: [] });
   
-      const response = await fetch("http://localhost:3000/formDatas", {
+      const response = await fetch("https://backoffice-6.onrender.com/formDatas", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

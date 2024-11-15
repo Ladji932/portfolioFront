@@ -5,7 +5,7 @@ import './App.css';
 import App from './App.jsx';
 import log from 'loglevel';
 
-// Désactiver tous les logs de loglevel
+
 log.setLevel('silent');
 
 // Ignorer les erreurs spécifiques dans la console
@@ -24,7 +24,7 @@ if (process.env.NODE_ENV === 'development') {
   console.warn = () => {};   // Désactive les avertissements dans la console
   console.log = () => {};    // Désactive les logs dans la console
 }
-
+  
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
