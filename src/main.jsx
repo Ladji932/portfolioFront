@@ -7,7 +7,7 @@ import log from 'loglevel';
 
 
 log.setLevel('silent');
-
+/*
 // Ignorer les erreurs spécifiques dans la console
 window.onerror = function (message, source, lineno, colno, error) {
   if (error && error.message && error.message.includes("Cannot read properties of undefined")) {
@@ -24,6 +24,7 @@ if (process.env.NODE_ENV === 'development') {
   console.warn = () => {};   // Désactive les avertissements dans la console
   console.log = () => {};    // Désactive les logs dans la console
 }
+  */
   
 createRoot(document.getElementById('root')).render(
   <StrictMode>

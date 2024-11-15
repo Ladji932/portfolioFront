@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useAtom } from "jotai";
 import { currentProjectAtom, projects } from "./Projects";
 import { useState } from "react";
+import { IoArrowBackCircle, IoArrowForwardCircle } from "react-icons/io5";
 
 const Section = (props) => {
   const { children, mobileTop } = props;
@@ -241,25 +242,32 @@ const ProjectsSection = () => {
   const previousProject = () => {
     setCurrentProject((currentProject - 1 + projects.length) % projects.length);
   };
-
   return (
-    <Section>
-      <div className="flex w-full h-full gap-8 items-center justify-center">
-        <button
-          className="hover:text-indigo-600 transition-colors"
-          onClick={previousProject}
-        >
-          ← Précédent
-        </button>
-        <h2 className="text-3xl md:text-5xl font-bold">Projets</h2>
-        <button
-          className="hover:text-indigo-600 transition-colors"
-          onClick={nextProject}
-        >
-          Suivant →
-        </button>
-      </div>
-    </Section>
+<Section className="space-y-8">
+  <div className="flex w-[90vw] h-full gap-8 items-center justify-center p-8 mt-10  ">
+    <button
+      className="text-white hover:text-yellow-400 transition-transform transform hover:scale-110"
+      onClick={previousProject}
+    >
+      <IoArrowBackCircle
+        size={64} // Agrandit les icônes
+        className="hover:drop-shadow-[0_6px_10px_rgba(255,223,0,0.6)]"
+      />
+    </button>
+    <h2 className="text-4xl md:text-5xl font-bold text-white ">
+      Projets
+    </h2>
+    <button
+      className="text-white hover:text-yellow-400 transition-transform transform hover:scale-110 "
+      onClick={nextProject}
+    >
+      <IoArrowForwardCircle
+        size={64} // Agrandit les icônes
+        className="drop-shadow-[0_4px_6px_rgba(0,0,0,0.4)] hover:drop-shadow-[0_6px_10px_rgba(255,223,0,0.6)]"
+      />
+    </button>
+  </div>
+</Section>
   );
 };
 

@@ -14,7 +14,7 @@ export const projects = [
   },
   {
     title: "Portfolio",
-    url: "https://www.youtube.com/watch?v=YkHqpqJgLKw",
+    url: "https://portfolio-front-tau-nine.vercel.app/",
     image: "projects/portfolio.jpg",
     description: "Learn how to bake a 3D model with Blender and use it in r3f",
   },
@@ -59,30 +59,30 @@ const Project = (props) => {
         onClick={() => window.open(project.url, "_blank")}
         ref={background}
       >
-        <planeGeometry args={[2.2, 2]} />
+        <planeGeometry args={[2.5, 2]} />
         <meshBasicMaterial color="black" transparent opacity={0.4} />
       </mesh>
       <Image
-        scale={[2, 1.2, 1]}
+        scale={[3, 1.8, 1]} // Agrandit les images
         url={project.image}
         toneMapped={false}
-        position-y={0.3}
+        position-y={0.4} // Position légèrement ajustée
       />
       <Text
-        maxWidth={2}
+        maxWidth={3}
         anchorX={"left"}
         anchorY={"top"}
-        fontSize={0.2}
-        position={[-1, 1.4, 0]} // Modifié pour ajuster la position du titre
+        fontSize={0.25} // Augmente la taille du texte
+        position={[-1.5, 1.6, 0]} // Ajuste la position du titre
       >
         {project.title.toUpperCase()}
       </Text>
       <Text
-        maxWidth={2}
+        maxWidth={3}
         anchorX="left"
         anchorY="top"
-        fontSize={0.1}
-        position={[-1, 1, 0]} // Modifié pour ajuster la position de la description
+        fontSize={0.15} // Ajuste la taille du texte pour la description
+        position={[-1.5, 1.2, 0]} // Position ajustée
       >
         {project.description}
       </Text>
@@ -101,9 +101,9 @@ export const Projects = () => {
       {projects.map((project, index) => (
         <motion.group
           key={"project_" + index}
-          position={[index * 2.5, 0, -3]}
+          position={[index * 3, 0, -3]} 
           animate={{
-            x: 0 + (index - currentProject) * 2.5,
+            x: 0 + (index - currentProject) * 3.5, // Distribution horizontale pour mieux remplir l'espace
             y: currentProject === index ? 0 : -0.1,
             z: currentProject === index ? -2 : -3,
             rotateX: currentProject === index ? 0 : -Math.PI / 3,
