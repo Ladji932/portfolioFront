@@ -16,7 +16,7 @@ export const projects = [
   },
   {
     title: "Jeu de combat",
-    url: "https://game-figth-react-l1gh.vercel.app/",
+    url: "https://game-figth.vercel.app/",
     image: "https://images.unsplash.com/photo-1538481199705-c710c4e965fc?auto=format&fit=crop&q=80&w=1200",
     description: "Créez et affrontez des personnages uniques.",
   },
@@ -28,7 +28,7 @@ export const projects = [
   },
   {
     title: "Cinémathèque",
-    url: "https://movies-front-vert.vercel.app/",
+    url: "https://cinematheque-movies-ladji.vercel.app/",
     image: "https://images.unsplash.com/photo-1536440136628-849c177e76a1?auto=format&fit=crop&q=80&w=1200",
     description: "Voici le lien vers mon projet Cinémathèque réalisé en React.",
   },
